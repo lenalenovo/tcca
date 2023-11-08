@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconda Vita</title>
+    <link rel="stylesheet" href="mapa.css" />
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../Js/modal.js" defer></script>
+    <script src="../Js/confirm.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="ContainerLogo">
+                <img class="logo" src='../assets/logo.png' alt="Caixinha" />
+                <h1 id="headerTitulo"><a href="../home/index.html" class="linkHeader">Seconda Vitta</h1></a>
+            </div>
+
+            <img src="../assets/Group 3 (1).png" alt="tracinhos" class="traco" />
+            <nav class="menulateral">
+                <div>
+                    <a href="../Usuario/index.html">
+                        <img src="../assets/iconeusuario.png" id="iconeUsuarioNav" />
+                    </a>
+                    <ul>
+                        <li class="item-menu">
+                            <a href="#">
+                                <span class="linktxt" id="modalLoginCadastro"
+                                    onclick="toggleModal()">login/cadastro</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="index.html">
+                                <span class="linktxt">locais de doações</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../Descarte/index.html">
+                                <span class="linktxt">descarte</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../fastFashion/index.html">
+                                <span class="linktxt">fastfashion</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../meioAmbiente/index.html">
+                                <span class="linktxt">meio ambiente</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../Comunidade/index.html">
+                                <span class="linktxt">comunidade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+
+        <div id="mapid"></div>
+    </main>
+</body>
+</html>

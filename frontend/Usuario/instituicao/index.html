@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconda Vita</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../../assets/logo.png">
+    <script src="../../Js/modal.js" defer></script>
+    <script src="../../Js/confirm.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="ContainerLogo">
+                <img class="logo" src='../../assets/logo.png' alt="Caixinha" />
+                <h1 id="headerTitulo"><a href="../../home/index.html" class="linkHeader">Seconda Vitta</h1></a>
+            </div>
+
+            <img src="../../assets/Group 3 (1).png" alt="tracinhos" class="traco" />
+            <nav class="menulateral">
+                <div>
+                    <a href="index.html">
+                        <img src="../../assets/iconeusuario.png" id="iconeUsuarioNav" />
+                    </a>
+                    <ul>
+                        <li class="item-menu">
+                            <a href="#">
+                                <span class="linktxt" id="modalLoginCadastro"
+                                    onclick="toggleModal()">login/cadastro</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../ondeDoar/index.html">
+                                <span class="linktxt">locais de doações</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../Descarte/index.html">
+                                <span class="linktxt">descarte</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../fastFashion/index.html">
+                                <span class="linktxt">fastfashion</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../meioAmbiente/index.html">
+                                <span class="linktxt">meio ambiente</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../Comunidade/index.html">
+                                <span class="linktxt">comunidade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <section>
+            <div class="popup">
+                <img src="../../assets/ususariorosa.png" class="usuarioFoto" />
+                <div class="areaTexto">
+                    <h1 class="popupTitulo">
+                        Usuário
+                    </h1>
+                    <p class="popupTexto">
+                        @aaaaaaaa
+                    </p>
+
+                    <h1 class="popupTitulo">
+                        senha
+                    </h1>
+                    <p class="popupTexto">
+                        ********
+                    </p>
+                    <h1 class="popupTitulo">
+                        e-mail
+                    </h1>
+                    <p class="popupTexto">
+                        email@email
+                    </p>
+                    <h1 class="popupTitulo">
+                        endereço
+                    </h1>
+                    <p class="popupTexto">
+                        rua tal
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <section id="fade" class="hide">
+        <div id="modal" class="hide">
+            <div class="headerModal">
+                <p class="textoHeaderModal">Login</p>
+                <a href="#">
+                    <img src="../../assets/X.png" id="fechaModal" onclick="toggleModal()" />
+                </a>
+            </div>
+            <div class="bodyModal">
+                <p class="textoModal">e-mail:</p>
+                <input type="text" placeholder="email@email" class="inputModal" required>
+                <p class="textoModal">senha:</p>
+                <input type="password" placeholder="******" class="inputModal" required>
+                <button type="button" class="botaoModal">entrar</button>
+            </div>
+            <div class="footerModal">
+                <p class="textoFooterModal">não possui cadastro? cadastre-se <a href="../../Cadastro/index.html"
+                        class="linkModal">aqui</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap");
+
+:root {
+  --rosa: #e6007e;
+  --branco: #ffff;
+  --preto: #231e1e;
+  --roxo-cinza: #4c5270;
+  --branco-cinza: #D9D9D9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--rosa);
+}
+
+header {
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+
+}
+
+main{
+  margin: 48px 78px;
+  min-height: 100vh;
+}
+
+.header-container {
+  background-color: var(--branco);
+  color: var(--rosa);
+  display: flex;
+  box-shadow: 0 1px 6px 0 var(--preto);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 100px;
+  white-space: nowrap;
+}
+
+#headerTitulo {
+  font-family: "Inria serif", serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.ContainerLogo {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.linkHeader {
+  text-decoration: none;
+  color: var(--rosa);
+}
+
+.logo {
+  width: 50px;
+  height: 80%;
+
+}
+
+.traco {
+  width: 46px;
+  height: 20px;
+  float: right;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li.item-menu a {
+  color: var(--branco);
+  background-color: var(--roxo-cinza);
+  width: 169px;
+  border-radius: 40px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 4px 4px;
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 40px;
+  gap: 5px;
+  justify-content: center;
+
+}
+
+ul li.item-menu {
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  margin-top: 34px;
+  margin-left: 39px;
+}
+
+ul li.item-menu a:hover {
+  background-color: var(--rosa);
+}
+
+.linktxt {
+  color: var(--branco);
+  font-family: 'Inria Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+.item-menu:hover .linktxt {
+  color: var(--branco);
+}
+
+.menulateral {
+  width: 0px;
+  height: 100vh;
+  background-color: var(--branco-cinza);
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: scroll;
+  transition: .2s;
+  z-index: 500;
+}
+
+#iconeUsuarioNav {
+  height: 55px;
+  position: relative;
+  left: 19px;
+}
+
+.menulateral:hover {
+  width: 330px;
+}
+
+
+.traco:hover+.menulateral {
+  width: 330px;
+}
+
+
+footer {
+  background-color: var(--roxo-cinza);
+  height: 20px;
+}
+
+.popup {
+  background-color: var(--roxo-cinza);
+  padding: 0px 20px;
+}
+
+.popupTitulo {
+  color: var(--branco);
+  font-family: "Inria Serif", serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.popupTexto {
+  font-family: "Inria Serif", serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: justify;
+  color: var(--branco);
+  padding: 33px;
+}
+
+section {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.textosPopup {
+  padding: 38px;
+  position: relative;
+  bottom: 119px;
+}
+
+#fade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 15;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  width: 391px;
+  height: 324px;
+  background-color: var(--branco-cinza);
+  display: flex;
+  flex-direction: column;
+}
+
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--rosa) solid 1px;
+  padding: 10px;
+}
+
+.bodyModal p {
+  margin-bottom: 1rem;
+  color: var(--roxo-cinza);
+  font-family: 'Inria Serif', serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  position: relative;
+  left: 21px;
+}
+
+.bodyModal {
+  color: var(--roxo-cinza);
+  font-family: 'Inria Serif', serif;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 8px;
+  margin-left: 9px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.botaoModal {
+  display: flex;
+  background-color: var(--rosa);
+  color: var(--branco);
+  align-content: center;
+  border: none;
+  height: 27px;
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 115px;
+  position: relative;
+  justify-content: space-around;
+  left: 125px;
+}
+
+#modal,
+#fade {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal.hide {
+  top: 0;
+}
+
+.textoHeaderModal {
+  color: var(--rosa);
+  font-family: "Inria serif", serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0;
+}
+
+.inputModal {
+  background-color: var(--roxo-cinza);
+  border-radius: 10px;
+  width: 258px;
+  border: none;
+  height: 23px;
+  position: relative;
+  left: 54px;
+  bottom: 19px;
+}
+
+input::placeholder {
+  color: var(--branco);
+}
+
+input[type=text],
+input[type=password] {
+  color: var(--branco);
+}
+
+.textoFooterModal {
+  color: var(--roxo-cinza);
+  font-family: 'Inria Serif', serif;
+  position: relative;
+  left: 53px;
+}
+
+.linkModal {
+  color: var(--rosa);
+  cursor: pointer;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconda Vita</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../Js/modal.js" defer></script>
+    <script src="../Js/aba.js" defer></script>
+    <script src="cadastro.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="ContainerLogo">
+                <img class="logo" src='../assets/logo.png' alt="Caixinha" />
+                <h1 id="headerTitulo"><a href="../home/index.html" class="linkHeader">Seconda Vitta</h1></a>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class='container'>
+            <div class='card'>
+                <nav>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="contribuidor-tab" data-bs-toggle="tab"
+                                data-bs-target="#contribuidor-tab-pane" type="button" role="tab"
+                                aria-controls="contribuidor-tab-pane" aria-selected="true"
+                                onclick="trocaAba(0)">Contribuidor</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="instituicao-tab" data-bs-toggle="tab"
+                                data-bs-target="#instituicao-tab-pane" type="button" role="tab"
+                                aria-controls="instituicao-tab-pane" aria-selected="false"
+                                onclick="trocaAba(1)">Instituição</button>
+                        </li>
+
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="contribuidor-tab-pane" role="tabpanel"
+                            aria-labelledby="contribuidor-tab" tabindex="0">
+                            <h1> Cadastrar</h1>
+
+                            <input type="hidden" id="tipo_usuario" value="">
+
+                            <div class="label-float">
+                                <input type="text" id="nome_c" placeholder=" " required>
+                                <label id="labelNome" for="nome">Nome</label>
+                            </div>
+
+                            <div class="label-float">
+                                <input type="text" id="usuario_c" placeholder=" " required>
+                                <label id="labelUsuario" for="usuario">Usuário</label>
+                            </div>
+
+                            <div class="label-float">
+                                <input type="text" id="email_c" placeholder=" " required>
+                                <label id="labelEmail" for="email">E-mail</label>
+                            </div>
+
+                            <div class="label-float">
+                                <input type="password" id="senha_c" placeholder=" " required>
+                                <label id="labelSenha" for="senha">Senha</label>
+                                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="label-float">
+                                <input type="password" id="confirmSenha_c" placeholder=" " required>
+                                <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+                                <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+
+                            <div class='justify-center'>
+                                <button onclick='cadastrar()'>Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>                
+
+                    <div class="tab-pane fade esconde" id="nav-instituicao" role="tabpanel"
+                        aria-labelledby="nav-instituicao-tab">
+                        <h1> Cadastrar </h1>
+                        <div class="label-float">
+                            <input type="text" id="nome" placeholder=" " required>
+                            <label id="labelNome" for="nome">Nome da Instituição</label>
+                        </div>
+
+                        <div class="label-float">
+                            <input type="text" id="usuario" placeholder=" " required>
+                            <label id="labelUsuario" for="usuario">Usuário</label>
+                        </div>
+
+                        <div class="label-float">
+                            <input type="text" id="email" placeholder=" " required>
+                            <label id="labelEmail" for="email">E-mail</label>
+                        </div>
+
+                        <div class="label-float">
+                            <input type="password" id="senha" placeholder=" " required>
+                            <label id="labelSenha" for="senha">Senha</label>
+                            <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+
+                        </div>
+
+                        <div class="label-float">
+                            <input type="text" id="endereco" placeholder="" required>
+                            <label id="labelEndereco" for="endereco">Endereço</label>
+                        </div>
+
+                        <div class="label-float">
+                            <input type="password" id="confirmSenha" placeholder=" " required>
+                            <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+                            <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
+                        </div>
+
+                        <div class='justify-center'>
+                            <button onclick='cadastrar()'>Cadastrar</button>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+
+            </ul>
+        </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+</html>

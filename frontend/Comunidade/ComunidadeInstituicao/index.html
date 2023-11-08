@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconda Vita</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../../assets/logo.png">
+    <script src="../../Js/modal.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="ContainerLogo">
+                <img class="logo" src='../../assets/logo.png' alt="Caixinha" />
+                <h1 id="headerTitulo"><a href="../../home/index.html" class="linkHeader">Seconda Vitta</h1></a>
+            </div>
+
+            <img src="../../assets/Group 3 (1).png" alt="tracinhos" class="traco" />
+            <nav class="menulateral">
+                <div>
+                    <a href="../../Usuario/instituicao/index.html">
+                        <img src="../../assets/iconeusuario.png" id="iconeUsuarioNav" />
+                    </a>
+                    <ul>
+                        <li class="item-menu">
+                            <a href="#">
+                                <span class="linktxt" id="modalLoginCadastro"
+                                    onclick="toggleModal()">login/cadastro</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../ondeDoar/index.html">
+                                <span class="linktxt">locais de doações</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../Descarte/index.html">
+                                <span class="linktxt">descarte</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../fastFashion/index.html">
+                                <span class="linktxt">fastfashion</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="../../meioAmbiente/index.html">
+                                <span class="linktxt">meio ambiente</span>
+                            </a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="index.html">
+                                <span class="linktxt">comunidade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <section class="feed">
+            <div class="postbox">
+                <img src="../../assets/ususariorosa.png" class="imagemUsuario">
+                <p class="postboxTexto">Instituição</p>
+                <p class="enviado">enviado por @instituicaodoe</p>
+                <p class="postboxHoras">há 20 horas</p>
+                <p class="textoCheck">meta não atingida</p>
+                <p class="localizacao">endereço</p>
+                <img src="../../assets/checkVazioCinza.png" class="checkVazio" />
+                <div class="curtidas-campo">
+                    <p class="curtidasTexto">0</p>
+                    <img class="curtida" src="../../assets/coracaoroxovazio.png" />
+                </div>
+            </div>
+        </section>
+        <img src="../../assets/escrever.png" class="botaoEscrever" onclick="toggleModal('modalPost', 'fade-2')">
+
+    </main>
+    <footer>
+    </footer>
+    <section id="fade" class="fade hide">
+        <div id="modal" class="hide modal">
+            <div class="headerModal">
+                <p class="textoHeaderModal">Login</p>
+                <a href="#">
+                    <img src="../../assets/X.png" id="fechaModal" onclick="toggleModal()" />
+                </a>
+            </div>
+            <div class="bodyModal">
+                <p class="textoModal">e-mail:</p>
+                <input type="text" placeholder="email@email" class="inputModal" required>
+                <p class="textoModal">senha:</p>
+                <input type="password" placeholder="******" class="inputModal" required>
+                <button type="button" class="botaoModal">entrar</button>
+            </div>
+            <div class="footerModal">
+                <p class="textoFooterModal">não possui cadastro? cadastre-se <a href="../../Cadastro/index.html"
+                        class="linkModal">aqui</a></p>
+            </div>
+        </div>
+    </section>
+    <section id="fade-2" class="fade hide">
+        <div id="modalPost" class="hide modal">
+            <div class="headerModalPost">
+                <img src="../../assets/ususariorosa.png" class="imagemUsuario">
+                <p class="textoPublicar">Instituição</p>
+                <p class="enviadoPost">@instituicaodoe</p>
+                <p class="localizacaoPost">endereço</p>
+                <a href="#">
+                    <img src="../../assets/X.png" id="fechaModal" class="fechaModalPost"
+                        onclick="toggleModal('modalPost', 'fade-2')" />
+                </a>
+            </div>
+            <div class="bodyModalPost">
+                <input type="text" placeholder="digite aqui" class="inputModalPost" required>
+            </div>
+            <div class="footerModal hidden" id="publicar">
+                <button type="button" class="botaoModalPost">publicar</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
