@@ -1,10 +1,41 @@
 const connection = require("../config/db");
 
+async function getLikes(request, response){
+  console.log('teste')
+  console.log(request.params.id_post, request.params.id_usuario)
+  connection.query("SELECT id_post, id_usuario from likes WHERE id_post=? AND id_usuario=?", [request.params.id_post, request.params.id_usuario],(err, results)=>{
+    try{
+    console.log('results')
+    console.log(results)
+      if(results){
+        response.status(200).json({
+          success:true,
+          message: "Retorno de likes com sucesso",
+          data:results,
+        });
+      }else{
+        response.status(400).json({
+          success: false,
+          message:"Não foi possível retornar os likes",
+          query: err.sql,
+          sqlMessage: err.sqlMessage,
+                });
+      }
+    } catch(e){
+        response.status(400).json({
+          success: false,
+          message:"Ocorreu um erro, não foi possível realizar sua requisição!",
+          query: err.sql,
+          sqlMessage: err.sqlMessage,
+        })
+    }
+  })
+}
 
 async function listlike(request, response) {
   // Preparar o comando de execução no banco
-  
-  connection.query("SELECT COUNT(*) AS qtd FROM likes WHERE id_post = ?", [request.params.id_post],(err, results) => {
+  console.log(request.params.id_post)
+  connection.query("SELECT COUNT(id_post) AS qtd FROM likes WHERE id_post = ?", [request.params.id_post],(err, results) => {
     try {
       // Tenta retornar as solicitações requisitadas
       if (results) {
@@ -39,8 +70,8 @@ async function listlike(request, response) {
 async function storelike(request, response) {
   // Preparar o comando de execução no banco
   const query =
-    "INSERT INTO like(id_usuario, id_post) VALUES(?, ?);";
-
+    "INSERT INTO likes(id_usuario, id_post) VALUES(?, ?);";
+  console.log(request.body)
   // Recuperar os dados enviados na requisição
   const params = Array(
     request.body.id_usuario,
@@ -50,6 +81,7 @@ async function storelike(request, response) {
   // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
   connection.query(query, params, (err, results) => {
     try {
+      console.log(err)
       if (results) {
         response.status(201).json({
           success: true,
@@ -156,4 +188,5 @@ async function storelike(request, response) {
 module.exports = {
   listlike,
   storelike,
+  getLikes
 };

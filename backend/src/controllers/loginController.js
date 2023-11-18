@@ -28,7 +28,7 @@ async function login(request, response) {
                         });
                     } else if(result) {
                         const id = results[0].id;
-                        const token = jwt.sign({ userId: id },'the-super-strong-secrect',{ expiresIn: 300 });
+                        const token = jwt.sign({ userId: id },'the-super-strong-secrect',{ expiresIn: 86400000 });
                         results[0]['token'] = token; 
                         
                         response

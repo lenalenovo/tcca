@@ -189,12 +189,13 @@ section {
   color: var(--branco);
 }
 
-#textoNoticia {
+#textoNoticia a{
   color: var(--branco);
   font-family: 'Inria Serif', serif;
   font-weight: 400;
   font-size: 15px;
   text-align: justify;
+  text-decoration: none;
 }
 
 .noticiaImagem {

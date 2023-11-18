@@ -165,9 +165,10 @@ footer {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: fixed;
 }
 
-.popupTitulo {
+.popupTitulo, .popupTituloEndereco {
     color: var(--roxo-cinza);
     font-family: "Inria Serif", serif;
     font-size: 20px;
@@ -180,7 +181,7 @@ footer {
     top: 78px;
 }
 
-.popupTexto {
+.popupTexto, .popupTextoEndereco {
     
     font-family: "Inria Serif", serif;
     font-size: 16px;
@@ -336,4 +337,15 @@ input[type=password] {
 .linkModal {
   color: var(--rosa);
   cursor: pointer;
+}
+
+.logout {
+  position: relative;
+  left: 175px;
+  top: -59px;
+}
+
+
+.hidden{
+  display: none;
 }

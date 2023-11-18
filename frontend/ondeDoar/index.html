@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="../assets/logo.png">
     <script src="../Js/modal.js" defer></script>
+    <script src="../home/logar.js" defer></script>
 </head>
 
 <body>
@@ -101,7 +102,7 @@
                 <input type="text" placeholder="email@email" class="inputModal" required name="email" id="email">
                 <p class="textoModal">senha:</p>
                 <input type="password" placeholder="******" class="inputModal" id="password" required name="password">
-                <button type="button" class="botaoModal" disabled="true">entrar</button>
+                <button type="button" class="botaoModal" onclick="logar()">entrar</button>
             </div>
             <div class="footerModal">
                 <p class="textoFooterModal">não possui cadastro? cadastre-se <a href="../Cadastro/index.html"

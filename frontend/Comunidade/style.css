@@ -138,6 +138,7 @@ ul li.item-menu a:hover {
 }
 
 .feed {
+  list-style: none;
   grid-area: container;
   display: flex;
   justify-content: center;
@@ -200,6 +201,7 @@ ul li.item-menu a:hover {
   position: relative;
   margin-left: 715px;
   margin-top: 20px;
+  padding-top: 20px;
 }
 
 .localizacao {
@@ -209,7 +211,7 @@ ul li.item-menu a:hover {
   color: var(--roxo-cinza);
   position: relative;
   margin-left: 54px;
-  bottom: 10px;
+  bottom: 18px;
 }
 
 .checkVazio {
@@ -225,7 +227,7 @@ ul li.item-menu a:hover {
 }
 
 .botaoEscrever {
-  position: absolute;
+  position: fixed;
   width: 47px;
   height: 39px;
   bottom: 49px;
@@ -520,11 +522,11 @@ input[type="password"] {
   background-color: var(--branco);
 }
 
-.textoPublicar {
+.textoPublicar, .conteudoTexto {
   color: var(--roxo-cinza);
-  position: fixed;
+  position: relative;
   font-weight: bold;
-  left: 48px;
+  padding-left: 43px;
   top: -13px;
 }
 
@@ -551,7 +553,7 @@ input[type="password"] {
   height: 242px;
   position: relative;
   left: 41px;
-  top: 23px;
+  top: -26px;
 }
 
 .botaoModalPost {
@@ -560,7 +562,7 @@ input[type="password"] {
   border-radius: 4px;
   color: var(--branco);
   position: relative;
-  bottom: -26px;
+  bottom: 23px;
   left: 497px;
   height: 25px;
 }
@@ -568,7 +570,7 @@ input[type="password"] {
 .fechaModalPost {
   position: relative;
   left: 566px;
-  top: 10px;
+  top: -39px;
 }
 
 .inputModalPost::placeholder {

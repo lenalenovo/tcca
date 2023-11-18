@@ -11,6 +11,7 @@
     <link rel="img" href="../assets/escrever.png"/>
     <script src="../Js/modal.js" defer></script>
     <script src="publicar.js" defer></script>
+    <script src="../home/logar.js" defer></script>
 </head>
 
 <body>
@@ -66,17 +67,20 @@
 
     </header>
     <main>
-        <section class="feed">
+        <section class="feed" id="feed">
             <div class="postbox">
                 <img src="../assets/ususariorosa.png" class="imagemUsuario">
-                <p class="postboxTexto">Instituição</p>
-                <p class="enviado">enviado por @instituicaodoe</p>
-                <p class="textoCheck">meta não atingida</p>
-                <p class="localizacao">endereço</p>
+                <p class="postboxTexto"></p>
+                <p class="enviado"></p>
+                <p class="textoCheck"></p>
+                <p class="localizacao"></p>
                 <img  src="../assets/checkVazioCinza.png"class="checkVazio"/>
+                <p class="conteudoTexto"></p>
                 <div class="curtidas-campo">
                     <p class="curtidasTexto">0</p>
+                    <button id="botaoCurtida" onclick="curtir()"> 
                     <img class="curtida" src="../assets/coracaoroxovazio.png" />
+                    </button>
                 </div>
             </div>
         </section>
@@ -97,7 +101,7 @@
                 <input type="text" placeholder="email@email" class="inputModal" required>
                 <p class="textoModal">senha:</p>
                 <input type="password" placeholder="******" class="inputModal" required>
-                <button type="button" class="botaoModal">entrar</button>
+                <button type="button"  onclick="logar()" class="botaoModal">entrar</button>
             </div>
             <div class="footerModal">
                 <p class="textoFooterModal">não possui cadastro? cadastre-se <a href="../Cadastro/index.html"
@@ -108,20 +112,20 @@
      <section id="fade-2" class="fade hide">
         <div id="modalPost" class="hide modal">
             <div class="headerModalPost">
-                <img src="../../assets/ususariorosa.png" class="imagemUsuario">
-                <p class="textoPublicar">Instituição</p>
-                <p class="enviadoPost">@instituicaodoe</p>
-                <p class="localizacaoPost">endereço</p>
+                <img src="../assets/ususariorosa.png" class="imagemUsuario">
+                <p class="textoPublicar" id="textoPublicar"></p>
+                <p class="enviadoPost" id="enviadoPost"></p>
+                <p class="localizacaoPost" id="localizacaoPost"></p>
                 <a href="#">
-                    <img src="../../assets/X.png" id="fechaModal" class="fechaModalPost"
+                    <img src="../assets/X.png" id="fechaModal" class="fechaModalPost"
                         onclick="toggleModal('modalPost', 'fade-2')" />
                 </a>
             </div>
             <div class="bodyModalPost">
-                <input type="text" placeholder="digite aqui" class="inputModalPost" required>
+                <input type="text" placeholder="digite aqui" class="inputModalPost" id="inputModalPostA"required>
             </div>
-            <div class="footerModal hidden" id="publicar">
-                <button type="button" class="botaoModalPost">publicar</button>
+            <div class="footerModal" id="publicar">
+                <button type="button" class="botaoModalPost" onclick="acionar()">publicar</button>
             </div>
         </div>
     </section>

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="../assets/logo.png">
     <script src="../Js/modal.js" defer></script>
-    <script src="../Js/confirm.js" defer></script>
+   
+    <script src="../home/logar.js" defer></script>
+    <script src="./sair.js" defer></script>
 </head>
 
 <body>
@@ -68,30 +70,30 @@
         <section>
             <div class="popup">
                 <img src="../assets/ususariorosa.png" class="usuarioFoto" />
+                <img src="../assets/logout.png" onclick="sair()" class="logout"/>
                 <div class="areaTexto">
                     <h1 class="popupTitulo">
                         Usuário
                     </h1>
-                    <p class="popupTexto">
-                        @aaaaaaaa
-                    </p>
-
-                    <h1 class="popupTitulo">
-                        senha
-                    </h1>
-                    <p class="popupTexto">
-                        ********
+                    <p class="popupTexto" id="textoUsuario">
+                        <!-- @aaaaaaaa -->
                     </p>
                     <h1 class="popupTitulo">
-                        e-mail
+                            e-mail
                     </h1>
-                    <p class="popupTexto">
-                        email@email
+                    <p class="popupTexto" id="textoEmail">   
+                        <!-- email@email --> 
                     </p>
+                    <h1 class="popupTituloEndereco hidden" id="tituloEndereco">
+                        endereço
+                    </h1>
+                    <p class="popupTextoEndereco hidden" id="textoEndereco">
+                        <!-- rua tal -->
                     </p>
                 </div>
             </div>
         </section>
+        
     </main>
     <footer>
     </footer>
@@ -108,7 +110,7 @@
                 <input type="text" placeholder="email@email" class="inputModal" required>
                 <p class="textoModal">senha:</p>
                 <input type="password" placeholder="******" class="inputModal" required>
-                <button type="button" class="botaoModal">entrar</button>
+                <button type="button" onclick="logar()" class="botaoModal">entrar</button>
             </div>
             <div class="footerModal">
                 <p class="textoFooterModal">não possui cadastro? cadastre-se <a href="../Cadastro/index.html"

@@ -1,23 +1,24 @@
 //const { response } = require("../../backend/src/app");
 
-let tipoUsuario = "Usuario";
+let tipoUsuario = "Pessoa";
 let nome = null;
 let usuario = null;
 let email = null;
-let endereco = null;
+let endereco= null;
 let senha = null;
 let confirmSenha = null;
 
 async function cadastrar() {
-  endereco = document.getElementById("endereco").value;
+   endereco = document.getElementById("endereco").value;
 
   if (endereco === null || endereco === "") {
-    tipoUsuario = "Usuario";
+    tipoUsuario = "Pessoa";
   } else {
     tipoUsuario = "Empresa";
   }
 
-  if (tipoUsuario === "Usuario") {
+
+  if (tipoUsuario === "Pessoa") {
     nome = document.getElementById("nome_c").value;
     usuario = document.getElementById("usuario_c").value;
     email = document.getElementById("email_c").value;
@@ -66,10 +67,19 @@ async function cadastrar() {
     },
     body: JSON.stringify(data),
   })
-    .then((res) => {
-      console.log(res);
+    .then(async(res) => {
+      const resposta = (await res.json());
       alert("certo");
-      window.location.href = "http://127.0.0.1:5500/projeto_tcc-main/frontend/home/index.html";
+      localStorage.setItem("usuario", usuario);
+      localStorage.setItem("endereco", endereco);
+      localStorage.setItem("email", email);
+      localStorage.setItem("nome", nome);
+      localStorage.setItem("tipoUsuario", tipoUsuario);
+      localStorage.setItem("id", resposta.data.id);
+
+      
+
+      window.location.href = "http://127.0.0.1:5500/frontend/home/index.html";
     })
     .catch((err) => {
       console.log(err);

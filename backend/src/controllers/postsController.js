@@ -2,9 +2,10 @@ const connection = require("../config/db");
 
 async function listPosts(request, response) {
   // Preparar o comando de execução no banco
-  connection.query("SELECT posts*, usuarios.nome, usuarios.usuario, usuarios.endereco, FROM posts INNER JOIN usuarios ON usuarios.id = posts.id_usuario", (err, results) => {
+  connection.query("SELECT posts.*, CASE WHEN Q.qtd IS NULL THEN 0 ELSE Q.qtd END AS qtd_likes, usuarios.nome, usuarios.usuario, usuarios.endereco FROM posts INNER JOIN usuarios ON usuarios.id = posts.id_usuario LEFT OUTER JOIN (SELECT COUNT(id_post) AS qtd, likes.id_post AS id_post FROM likes GROUP BY likes.id_post ) Q ON Q.id_post = posts.id", (err, results) => {
     try {
       // Tenta retornar as solicitações requisitadas
+      console.log(results)  
       if (results) {
         // Se tiver conteúdo
         response.status(200).json({
@@ -42,9 +43,10 @@ async function storePost(request, response) {
   // Recuperar os dados enviados na requisição
   const params = Array(
     request.body.texto,
-    request.body.id_usuario,
-  );
+    request.body.id_usuario  );
 
+   console.log(params.texto)
+   console.log(params.id_usuario)
   // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
   connection.query(query, params, (err, results) => {
     try {

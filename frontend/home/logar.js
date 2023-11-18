@@ -18,13 +18,16 @@ async function logar() {
     },
     body: JSON.stringify(data),
   })
-    .then((response) => response.json())
+    .then((response) => response.json().id)
     .then((data) => {
       console.log(data);
       console.log(data.data[0].tipo_usuario);
       alert(data.message);
       localStorage.setItem("tipoUsuario", data.data[0].tipo_usuario);
+      localStorage.setItem('token');
+      localStorage.setItem("id", id);
+      // localStorage.removeItem('tipoUsuario')
       window.location.href =
-        "http://127.0.0.1:5500/projeto_tcc-main/frontend/home/index.html";
+        "http://127.0.0.1:5500/frontend/home/index.html";
     });
 }
