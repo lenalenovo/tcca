@@ -26,9 +26,9 @@ endereco = localStorage.getItem("endereco");
 email = localStorage.getItem("email");
 tipoUsuario = localStorage.getItem("tipoUsuario");
 
-console.log(usuario)
-console.log(endereco)
-console.log(email)
+// console.log(usuario)
+// console.log(endereco)
+// console.log(email)
 
 const textoUsuario = document.getElementById("textoUsuario")
 textoUsuario.innerText = usuario

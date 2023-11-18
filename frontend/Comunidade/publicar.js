@@ -13,10 +13,10 @@ email = localStorage.getItem("email");
 tipoUsuario = localStorage.getItem("tipoUsuario");
 nome = localStorage.getItem("nome");
 
-console.log(usuario)
-console.log(endereco)
-console.log(email)
-console.log(nome)
+// console.log(usuario)
+// console.log(endereco)
+// console.log(email)
+// console.log(nome)
 
 const nomePostModal = document.getElementById("textoPublicar")
 nomePostModal.innerText = nome
@@ -28,7 +28,7 @@ const enderecoPostModal = document.getElementById("localizacaoPost")
 enderecoPostModal.innerText = endereco
 
 const texto = document.getElementById("inputModalPostA").value;
-console.log(texto)
+// console.log(texto)
 const id_usuario = localStorage.getItem('id');
 
 function acionar(){
@@ -163,12 +163,12 @@ async function curtir(id){
 
   const qtd_likes = (await likesResponse.json()).data[0].qtd;
 
-  if(id_usuario){
-    alert("Pode tentar cutir")
-  }
-  else{
-    alert("é preciso que faça login¹")
-  }
+  // if(id_usuario){
+  //   alert("Pode tentar cutir")
+  // }
+  // else{
+  //   alert("é preciso que faça login¹")
+  // }
 
   if(tipoUsuario === "Empresa"){
       alert("seu tipo de usuário não pode curtir!")

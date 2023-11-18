@@ -43,13 +43,13 @@ async function cadastrar() {
 
   document.getElementById("endereco").value = null;
 
-  console.log(nome);
-  console.log(usuario);
-  console.log(senha);
-  console.log(email);
-  console.log(endereco);
-  console.log(confirmSenha);
-  console.log(tipoUsuario);
+  // console.log(nome);
+  // console.log(usuario);
+  // console.log(senha);
+  // console.log(email);
+  // console.log(endereco);
+  // console.log(confirmSenha);
+  // console.log(tipoUsuario);
 
   const data = {
     nome,
@@ -69,7 +69,7 @@ async function cadastrar() {
   })
     .then(async(res) => {
       const resposta = (await res.json());
-      alert("certo");
+      // alert("certo");
       localStorage.setItem("usuario", usuario);
       localStorage.setItem("endereco", endereco);
       localStorage.setItem("email", email);
