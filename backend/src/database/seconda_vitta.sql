@@ -12,12 +12,14 @@ create table usuarios(
     	tipo_usuario enum('Pessoa','Empresa'),
     	primary key (id)
 );
+ALTER TABLE `seconda_vitta`.`usuarios` 
+CHANGE COLUMN `senha` `senha` VARCHAR(244) NOT NULL ;
 
 
 create table posts (
 	id int auto_increment not null,
 	texto text not null,
-	concluido enum ('t', 'f') default ('f')
+	concluido enum ('t', 'f') default ('f'),
 	id_usuario int not null,
 	qtd_likes bigint, 
 	PRIMARY KEY (id),
