@@ -68,13 +68,11 @@ async function getPosts () {
         <img src="../assets/ususariorosa.png" class="imagemUsuario">
         <p class="postboxTexto">${post.nome}</p>
         <p class="enviado">enviado por ${post.usuario}</p>
-        <p class="textoCheck">meta não atingida</p>
         <p class="localizacao">${post.endereco}</p>
-        <img  src="../assets/checkVazioCinza.png"class="checkVazio"/>
         <p class="conteudoTexto">${post.texto}</p>
         <div class="curtidas-campo">
             <p class="text-${post.id}" class="curtidasTexto">${post.qtd_likes}</p>
-            <button class="button-${post.id}" id="botaoCurtida" ${likedata.length > 0  ? "disabled" : ""} onclick="curtir(${post.id})"> 
+            <button class="button-${post.id}" id="botaoCurtida" ${likedata.length > 0  ? "disabled" : tipoUsuario==="Empresa" ? "disabled":""} onclick="curtir(${post.id})"> 
             <img class="curtida" src="../assets/coracaoroxovazio.png" />
             </button>
         </div>
@@ -130,6 +128,8 @@ async function postar() {
 
 }
 
+
+
 document.querySelector("#botaoCurtida").addEventListener("click", curtir);
 async function curtir(id){
   const data={
@@ -171,12 +171,14 @@ async function curtir(id){
   // }
 
   if(tipoUsuario === "Empresa"){
-      alert("seu tipo de usuário não pode curtir!")
+      
+     
   }
   else{
     console.log(qtd_likes)
       curtidasTexto.innerHTML = qtd_likes;
-      botaoCurtida.disabled = true
+      botaoCurtida.disabled = true;
+    
       // curtidasTexto.value = parseInt(curtidasTexto.value) +1;
     
   }

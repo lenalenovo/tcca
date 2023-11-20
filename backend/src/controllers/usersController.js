@@ -12,6 +12,7 @@
 */
 
 // Importa as configurações do banco de dados na variável connection
+const { request } = require("../app");
 const connection = require("../config/db");
 
 // Pacote para criptografar a senha de usuario
@@ -54,10 +55,22 @@ async function listUsers(request, response) {
 // Função que cria um novo usuário
 async function storeUser(request, response) {
   // Preparar o comando de execução no banco
+  const userAlreadyExist = await userExists(request.body.email)
+  if (userAlreadyExist) {
+    response.status(400).json({
+      success: false,
+      message: "Usuário já existe"
+    })
+    return
+  }
+
+
+  //response sucess false, message: usuario ja existe
   const query =
     "INSERT INTO usuarios(nome, usuario, email, senha, endereco, tipo_usuario) VALUES(?, ?, ?, ?, ?, ?);";
-
+  
   // Recuperar os dados enviados na requisição
+  console.log(request.body.senha)
   const params = Array(
     request.body.nome,
     request.body.usuario,
@@ -76,13 +89,13 @@ async function storeUser(request, response) {
     try {
       console.log(results)
       if (results) {
-          response.status(201).json({
-            success: true,
-            message: `Sucesso! Usuário cadastrado.`,
-            data: {
-              id: results.insertId
-            },
-          });
+        response.status(201).json({
+          success: true,
+          message: `Sucesso! Usuário cadastrado.`,
+          data: {
+            id: results.insertId
+          },
+        });
       } else {
         response.status(400).json({
           success: false,
@@ -102,14 +115,32 @@ async function storeUser(request, response) {
     }
   });
 }
+async function userExists(email) {
+  const query = "SELECT * FROM usuarios WHERE `email`=?";
+  const params = Array(
+    email
+  );
+  return new Promise((res, rej) => {
+    connection.query(query, params, (err, results) => {
+
+      if (results.length > 0) {
+        console.log('results')
+        console.log(results)
+        console.log('results')
+        res(true)
+      } else {
+        res(false)
+      
+      }
+    })
+  })
+}
 
 // Função que atualiza o usuário no banco
 async function updateUser(request, response) {
   // Preparar o comando de execução no banco
   const query =
     "UPDATE usuarios SET `nome` = ?, `senha` = ?, `endereco` = ? WHERE `id` = ?";
-
-  // Recuperar os dados enviados na requisição respectivamente
   const params = Array(
     request.body.nome,
     bcrypt.hashSync(request.body.senha, 10),

@@ -70,6 +70,7 @@ async function cadastrar() {
     .then(async(res) => {
       const resposta = (await res.json());
       // alert("certo");
+      console.log(resposta)
       localStorage.setItem("usuario", usuario);
       localStorage.setItem("endereco", endereco);
       localStorage.setItem("email", email);
@@ -83,5 +84,6 @@ async function cadastrar() {
     })
     .catch((err) => {
       console.log(err);
+      alert("Não foi possível, usuário já existente!")
     });
 }

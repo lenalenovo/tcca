@@ -150,7 +150,7 @@ ul li.item-menu a:hover {
 }
 
 .postbox {
-  margin-top: 193px;
+  margin-top: 73px;
   background-color: var(--branco);
   border-radius: 0.938rem;
   box-shadow: 0rem 0.25rem 0.25rem transparent;
@@ -211,14 +211,19 @@ ul li.item-menu a:hover {
   color: var(--roxo-cinza);
   position: relative;
   margin-left: 54px;
-  bottom: 18px;
+  bottom: -27px;
 }
 
-.checkVazio {
+/* .checkVazio {
   width: 11px;
   position: absolute;
   left: 806px;
   top: 21px;
+} */
+#botaoCurtida{
+  border: none;
+  color: transparent;
+  background: transparent;
 }
 
 .curtida {
@@ -522,12 +527,21 @@ input[type="password"] {
   background-color: var(--branco);
 }
 
-.textoPublicar, .conteudoTexto {
+.textoPublicar {
+  color: var(--roxo-cinza);
+    position: relative;
+    font-weight: bold;
+    padding-left: 43px;
+    top: -10px;
+}
+
+
+.conteudoTexto{
   color: var(--roxo-cinza);
   position: relative;
   font-weight: bold;
-  padding-left: 43px;
-  top: -13px;
+  padding-left: 50px;
+  top: 12px;
 }
 
 .enviadoPost {
